@@ -9,12 +9,8 @@ const gridPatternIndex = (num) => {
 
 const addStatsToProjectList = () => {
   blocksToMix.forEach((block, i) => {
-    // console.log({ i })
     const indexToPlace = gridPatternIndex(i + 1);
-    // console.log('placing at:', indexToPlace)
-
     if (indexToPlace > projects.length) return
-    // console.log({ indexToPlace })
     const projectBefore = projects[indexToPlace - 1];
 
     projectsWrapper.insertBefore(block, projectBefore);

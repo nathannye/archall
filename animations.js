@@ -31,9 +31,6 @@ const initLenis = () => {
   }
   const lenis = new Lenis();
 
-  // lenis.on('scroll', (e) => {
-  //     console.log(e)
-  // })
   window.lenis = lenis;
 
   function raf(time) {

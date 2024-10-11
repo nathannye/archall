@@ -2,11 +2,6 @@ const blocksToMix = document.querySelectorAll(".mixing-blocks > *");
 const projectsWrapper = document.querySelector(".sector-projects-wrapper");
 const projects = projectsWrapper?.children;
 
-console.log({
-  projectsWrapper,
-  blocksToMix,
-  p: projects?.length,
-});
 
 const gridPatternIndex = (num) => {
   return num * 3;
@@ -24,9 +19,7 @@ const hideMixBlock = (el) => {
 
 const addStatsToProjectList = () => {
   blocksToMix.forEach((block, i) => {
-    // console.log({ i })
     const indexToPlace = gridPatternIndex(i + 1);
-    // console.log('placing at:', indexToPlace)
 
     if (indexToPlace + 1 > projects.length) {
       hideMixBlock(block);

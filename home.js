@@ -1,5 +1,3 @@
-console.log("LOAD CUSTOM");
-
 class HeroSlider {
   constructor(el) {
     this.heroSlider = el;
@@ -112,7 +110,6 @@ class HeroSlider {
   }
 
   createSliderInterval() {
-    console.log("created hero slider");
     this.interval = setInterval(() => {
       this.nextSlide(this.activeImage);
     }, this.duration);
@@ -150,8 +147,6 @@ class RandomizedImageCarousel {
         const randomNumber = this.getRandom(cardImages.length - 1);
         const visibleImage = cardImages[randomNumber];
 
-        console.log("Selected image", randomNumber, "from card", index);
-        console.log(cardImages);
         // remove source to prevent loading
         cardImages.forEach((image, i) => {
           if (i !== randomNumber) {

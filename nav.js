@@ -26,7 +26,6 @@ class Nav {
   toggleDropdown() {
     this.dropdownOpen ? this.optionsTl.reverse() : this.optionsTl.play();
     this.dropdownOpen = !this.dropdownOpen;
-    console.log("toggled drop to:", this.dropdownOpen);
   }
 
   handleSectorIn(index) {
@@ -165,7 +164,6 @@ class Nav {
       el.addEventListener("mouseout", this.handleSectorOut.bind(this));
     });
 
-    console.log("triggers::", this.trigger);
   }
 }
 

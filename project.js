@@ -24,7 +24,6 @@ class HotspotPoint {
     this.posY = this.marker.dataset.y / 100;
     this.mobileCloseButton = this.mobilePopup.querySelector("img");
     this.isPopupLeft = this.isMobile ? false : this.posX >= 0.8;
-    console.log("is mobilio:", this.isMobile, this.posX);
     this.popup = this.point.querySelector('[data-point="popup"]');
     this.closeButton = this.point.querySelector('[data-point="close"]');
 
@@ -51,7 +50,7 @@ class HotspotPoint {
     const x = Math.min(this.posX, 0.9);
     const y = Math.min(this.posY, 0.9);
 
-    console.log({ x, y });
+
 
     const s = `translate(${x * this.containerWidth}px, ${
       y * this.containerHeight
@@ -121,9 +120,6 @@ class HotspotPoint {
   init() {
     this.popup.style.opacity = 0;
     this.mobilePopup.style.opacity = 0;
-
-    console.log({ isLeft: this.isPopupLeft });
-
     if (this.isPopupLeft) {
       this.popup.style.transform = `translate(calc(-100% - 75px),20px,0px);`;
     }

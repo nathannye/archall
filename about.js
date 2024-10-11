@@ -1,5 +1,3 @@
-console.log("INSTANCE OF ABOUT");
-
 class Members {
   constructor() {
     this.people = document.querySelectorAll(".team-grid > div");
@@ -9,9 +7,7 @@ class Members {
 
   createListeners() {
     this.people.forEach((person, index) => {
-      console.log("create listener for", person);
       person.addEventListener("touchstart", () => {
-        console.log("fired toggle person");
         person.classList.toggle("active");
       });
     });
