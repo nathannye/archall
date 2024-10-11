@@ -1,7 +1,6 @@
 export class HeroSlider {
-  constructor() {
-    this.heroSlider = document.querySelector(".slider-container");
-    if (this.heroSlider) {
+  constructor(el) {
+    this.heroSlider = el
       this.items = document.querySelectorAll(".slider-item");
       this.dots = document.querySelectorAll(".hero-slider__controller > .dot");
       this.toggleButton = document.querySelector(".slider-toggle");
@@ -15,7 +14,6 @@ export class HeroSlider {
       this.createSliderInterval();
       this.createClickListeners();
       this.setInitialSlide();
-    }
   }
 
   setInitialSlide() {
