@@ -12,7 +12,6 @@ export default class App{
 
   init() {
     new Global()
-    new Animations
     if (this.currentPage === '/') {
       new Home()
     }
@@ -28,6 +27,9 @@ export default class App{
     if (this.currentPage.startsWith('/sector/')) {
       new Sector()
     }
+
+
+
   }
 }
 
