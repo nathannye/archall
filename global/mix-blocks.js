@@ -15,7 +15,7 @@ export default class MixBlocks{
 
   init() {
     this.blocksToMix.forEach((block, i) => {
-      const indexToPlace = gridPatternIndex(i + 1);
+      const indexToPlace = this.gridPatternIndex(i + 1);
       if (indexToPlace > this.projects.length) return
       const projectBefore = this.projects[indexToPlace - 1];
   

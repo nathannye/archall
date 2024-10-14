@@ -7657,7 +7657,7 @@
     }
     init() {
       this.blocksToMix.forEach((block, i) => {
-        const indexToPlace = gridPatternIndex(i + 1);
+        const indexToPlace = this.gridPatternIndex(i + 1);
         if (indexToPlace > this.projects.length) return;
         const projectBefore = this.projects[indexToPlace - 1];
         this.rojectsWrapper.insertBefore(block, projectBefore);
@@ -8257,11 +8257,11 @@
       }
     }
     init() {
-      const gridPatternIndex2 = (num) => {
+      const gridPatternIndex = (num) => {
         return 4 + (num - 1) * 5;
       };
       this.blocksToMix.forEach((block, i) => {
-        const indexToPlace = gridPatternIndex2(i + 1);
+        const indexToPlace = gridPatternIndex(i + 1);
         if (indexToPlace + 1 > this.projects.length) {
           hideMixBlock(block);
           return;
