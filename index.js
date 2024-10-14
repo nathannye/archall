@@ -6,6 +6,19 @@ import Project from "./project";
 import Sector from "./sector";
 import { ScrollTrigger } from "gsap/all";
 
+
+import './styles/about.css'
+import './styles/global.css'
+import  './styles/home.css'
+import  './styles/index.css'
+import  './styles/project.css'
+import './styles/sector.css'
+import './styles/styles.css'
+import './styles/work.css'
+import './styles/lenis.css'
+
+
+
 export default class App{
   constructor() {
     this.currentPage = window.location.pathname;

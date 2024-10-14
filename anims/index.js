@@ -3,6 +3,8 @@ import NumberCounter from "./number-counter";
 import Parallax from "./parallax";
 import Scroll from "./scroll";
 
+
+
 export default class Animations{
   constructor() {
     this.parallaxElements = document.querySelectorAll('[data-animation="parallax"]');
