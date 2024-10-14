@@ -9,7 +9,7 @@ export default class Global{
     new Nav()
     new Animations()
 
-    console.loog('global created')
+    console.log('global created')
   }
 
   init() {
