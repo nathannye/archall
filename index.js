@@ -6,8 +6,8 @@ import Sector from "./sector";
 
 export default class App{
   constructor() {
-    currentPage = window.location.pathname;
-    console.log('current page', currentPage)
+    this.currentPage = window.location.pathname;
+    console.log('current page', this.currentPage)
     this.init()
   }
 
