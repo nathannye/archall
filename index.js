@@ -6,7 +6,6 @@ import Project from "./project";
 import Sector from "./sector";
 import { ScrollTrigger } from "gsap/all";
 
-
 import './styles/about.css'
 import './styles/global.css'
 import  './styles/home.css'

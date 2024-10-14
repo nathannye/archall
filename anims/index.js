@@ -25,7 +25,7 @@ export default class Animations{
     new Lists()
 
 
-    const counterElements = document.querySelectorAll('[data-animation="count"]');
+    const counterElements = document.querySelectorAll('[data-animation="count"], [data-animation="counter"]');
 
     if (counterElements?.length > 0) {
       counterElements.forEach((el, i) => {

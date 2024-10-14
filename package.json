@@ -10,5 +10,8 @@
   "scripts": {
     "dev": "NODE_ENV=dev node esbuild.config.js",
     "build": "NODE_ENV=production node esbuild.config.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
   }
 }
