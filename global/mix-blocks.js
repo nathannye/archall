@@ -21,7 +21,7 @@ export default class MixBlocks{
   constructor() {
     this.blocksToMix = document.querySelectorAll(".mixing-blocks > *");
     this.projectsWrapper = document.querySelector(".projects-wrapper");
-    this.projects = projectsWrapper.children;
+    this.projects = this.projectsWrapper.children;
     this.init()
   }
 
