@@ -12,8 +12,9 @@ export default class NumberCounter{
         once: true,
         trigger: this.el,
         onEnter: () => {
-          if (el.dataset?.counter === 'year') {
-            gsap.to(el, {
+          if (this.el.dataset?.counter === 'year') {
+            const endValue = new Date().getFullYear()
+            gsap.to(this.el, {
               innerText: endValue,
               snap: {
                 innerText: 1
@@ -22,8 +23,8 @@ export default class NumberCounter{
             })
             
           } else {
-            gsap.to(el, {
-              innerText: endValue,
+            gsap.from(this.el, {
+              innerText: 0,
               snap: {
                 innerText: 1
               },
