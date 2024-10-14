@@ -31,6 +31,7 @@ class HotspotPoint {
     this.listeners();
     this.listeners2();
     this.setPosition();
+    
   }
 
   listeners() {
