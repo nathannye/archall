@@ -11,6 +11,12 @@ export default class Sector{
   }
 
   init() {
+
+    const gridPatternIndex =(num) => {
+      // use pattern 3+(n−1)×5
+      return 4 + (num - 1) * 5;
+    }
+
     this.blocksToMix.forEach((block, i) => {
       const indexToPlace = gridPatternIndex(i + 1);
   

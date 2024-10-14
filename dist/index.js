@@ -8257,8 +8257,11 @@
       }
     }
     init() {
+      const gridPatternIndex2 = (num) => {
+        return 4 + (num - 1) * 5;
+      };
       this.blocksToMix.forEach((block, i) => {
-        const indexToPlace = gridPatternIndex(i + 1);
+        const indexToPlace = gridPatternIndex2(i + 1);
         if (indexToPlace + 1 > this.projects.length) {
           hideMixBlock(block);
           return;
