@@ -1,21 +1,41 @@
-const blocksToMix = document.querySelectorAll(".mixing-blocks > *");
-const projectsWrapper = document.querySelector(".projects-wrapper");
-const projects = projectsWrapper.children;
+import About from "./about";
+import Global from "./global";
+import Home from "./home";
+import Project from "./project";
+import Sector from "./sector";
 
-const gridPatternIndex = (num) => {
-  // use pattern 3+(n−1)×5
-  return 4 + (num - 1) * 5;
-};
+export default class App{
+  constructor() {
+    currentPage = window.location.pathname;
+    console.log('current page', currentPage)
+    this.init()
+  }
 
-const addStatsToProjectList = () => {
-  blocksToMix.forEach((block, i) => {
-    const indexToPlace = gridPatternIndex(i + 1);
-    if (indexToPlace > projects.length) return
-    const projectBefore = projects[indexToPlace - 1];
+  init() {
+    new Global()
+    if (this.currentPage === '/') {
+      new Home()
+      console.log('created home')
+    }
 
-    projectsWrapper.insertBefore(block, projectBefore);
-  });
-};
+    if(this.currentPage === '/about') {
+      new About()
+      console.log('created about')
+    }
 
-addStatsToProjectList();
+    if (this.currentPage.startsWith('/projects/')) {
+      new Project()
+      console.log('created project')
+    }
 
+    if (this.currentPage.startsWith('/sector/')) {
+      new Sector()
+      console.log('created sector')
+    }
+
+
+
+  }
+}
+
+new App()
