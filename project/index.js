@@ -29,6 +29,7 @@ class HotspotPoint {
 
     this.init();
     this.listeners();
+    this.listeners2();
     this.setPosition();
   }
 
@@ -40,6 +41,15 @@ class HotspotPoint {
         this.setPosition();
       };
     }
+  }
+
+
+  listeners2() {
+    this.marker.addEventListener("click", () => this.open.bind(this)());
+    this.closeButton.addEventListener("click", () => this.close.bind(this)());
+    this.mobileCloseButton.addEventListener("click", () =>
+      this.close.bind(this)()
+    );
   }
 
   setPosition() {
@@ -126,13 +136,7 @@ class HotspotPoint {
     this.point.style.position = "absolute";
   }
 
-  listeners() {
-    this.marker.addEventListener("click", () => this.open.bind(this)());
-    this.closeButton.addEventListener("click", () => this.close.bind(this)());
-    this.mobileCloseButton.addEventListener("click", () =>
-      this.close.bind(this)()
-    );
-  }
+
 }
 
 class HotspotSection {

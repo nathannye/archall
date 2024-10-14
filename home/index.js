@@ -1,4 +1,4 @@
-import { HeroSlider } from "../home";
+import HeroSlider from "./heroSlider";
 import RandomizedImageCarousel from "./randomizedImageCarousel";
 
 export default class Home{

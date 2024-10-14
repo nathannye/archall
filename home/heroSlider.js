@@ -1,4 +1,4 @@
-export class HeroSlider {
+export default class HeroSlider {
   constructor(el) {
     this.heroSlider = el
       this.items = document.querySelectorAll(".slider-item");

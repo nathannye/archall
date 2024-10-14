@@ -1,4 +1,3 @@
-
 export default class RandomizedImageCarousel {
   constructor(cards) {
     this.cards = cards;

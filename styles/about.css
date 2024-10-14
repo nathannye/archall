@@ -1,0 +1,93 @@
+.employeeInfo {
+  clip-path: inset(100% 0% 0% 0%);
+  transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 900ms;
+}
+/* 
+.employeeInfo > div > * {
+  opacity: 0;
+  transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 900ms;
+} */
+
+.employeeInfo:hover {
+  clip-path: inset(0% 0% 0% 0%);
+  transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 900ms;
+}
+/* 
+.employeeInfo:hover > div > * {
+  opacity: 1;
+  transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 900ms;
+} */
+
+@media screen and (max-width: 990px) {
+  .team-grid > div.active .employee-box .employeeinfo {
+    clip-path: inset(0% 0% 0% 0%);
+    transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 500ms;
+  }
+
+  .team-grid > div .employee-box .employeeinfo {
+    clip-path: inset(100% 0% 0% 0%);
+    transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 500ms;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .employee-box:hover .employeeinfo {
+    clip-path: inset(0% 0% 0% 0%);
+    transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 900ms;
+  }
+
+  .employee-box .employeeinfo {
+    clip-path: inset(100% 0% 0% 0%);
+    transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 900ms;
+  }
+}
+
+/* Grid item classes */
+
+/* .career-link-item {
+  background: #0086bf;
+  color: white !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+} */
+
+.employeesContainer > .team-grid__filler {
+  display: none;
+}
+
+.employeesContainer .team-grid > .team-grid__filler {
+  display: block !important
+  width: 100% !important;
+}
+
+.career-link-item a.link__underline::after,
+.career-link-item a.link__underline::before {
+  background: white !important;
+}
+
+.career-link-item a {
+  font-size: 14px;
+  font-family: Swis721, sans-serif;
+  color: white !important;
+  line-height: 23px;
+}
+
+.career-link-item:hover .link__underline {
+  color: white !important;
+}
+
+.career-link-item a.link__underline:hover {
+  color: white !important;
+  transition: cubic-bezier(0.65, 0, 0.35, 1) 250ms;
+}
+
+/* .career-link-item img {
+  width: 44%;
+  margin-bottom: 24px;
+  height: auto;
+} */
