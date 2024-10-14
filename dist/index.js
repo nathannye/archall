@@ -6705,7 +6705,7 @@
   var Parallax = class {
     constructor(el) {
       this.el = el;
-      this.DISTANCE = 32;
+      this.DISTANCE = 24;
       this.init();
     }
     init() {

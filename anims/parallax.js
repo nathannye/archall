@@ -3,7 +3,7 @@ import gsap from "gsap";
 export default class Parallax{
   constructor(el) {
     this.el = el
-    this.DISTANCE = 32
+    this.DISTANCE = 24
     this.init()
   }
 
