@@ -4305,7 +4305,7 @@
       }
     }
     init() {
-      [...elements].slice(2).forEach((el2, i) => {
+      [...this.elements].slice(2).forEach((el2, i) => {
         gsapWithCSS.from(el2, {
           scrollTrigger: {
             start: "top 90%",
@@ -6389,16 +6389,16 @@
   };
   ScrollTrigger2.batch = function(targets, vars) {
     var result = [], varsCopy = {}, interval = vars.interval || 0.016, batchMax = vars.batchMax || 1e9, proxyCallback = function proxyCallback2(type, callback) {
-      var elements2 = [], triggers = [], delay = gsap3.delayedCall(interval, function() {
-        callback(elements2, triggers);
-        elements2 = [];
+      var elements = [], triggers = [], delay = gsap3.delayedCall(interval, function() {
+        callback(elements, triggers);
+        elements = [];
         triggers = [];
       }).pause();
       return function(self) {
-        elements2.length || delay.restart(true);
-        elements2.push(self.trigger);
+        elements.length || delay.restart(true);
+        elements.push(self.trigger);
         triggers.push(self);
-        batchMax <= elements2.length && delay.progress(1);
+        batchMax <= elements.length && delay.progress(1);
       };
     }, p;
     for (p in vars) {

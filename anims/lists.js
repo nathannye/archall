@@ -12,7 +12,7 @@ export default class Lists{
 
   init(){
     // only do it for 3 and on since 2 are in viewport
-    [...elements].slice(2).forEach((el, i) => {
+    [...this.elements].slice(2).forEach((el, i) => {
       gsap.from(el, {
         scrollTrigger: {
           start: "top 90%",
