@@ -1,4 +1,4 @@
-import Animations from "../animations";
+import Animations from "../anims";
 import MixBlocks from "./mix-blocks";
 import ModalForm from "./modal";
 import Nav from "./nav";
@@ -8,6 +8,8 @@ export default class Global{
     new MixBlocks()
     new Nav()
     new Animations()
+
+    console.loog('global created')
   }
 
   init() {

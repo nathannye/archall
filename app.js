@@ -1,5 +1,5 @@
 import About from "./about";
-import Global from "./app";
+import Global from "./global";
 import Home from "./home";
 import Project from "./project";
 import Sector from "./sector";
