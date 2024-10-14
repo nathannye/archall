@@ -6704,13 +6704,14 @@
   var Parallax = class {
     constructor(el2) {
       this.el = el2;
+      this.DISTANCE = 1.15;
       this.init();
     }
     init() {
       const img = this.el.querySelector("img");
-      img.style.scale = 100 + DISTANCE + "%";
+      img.style.scale = 100 + this.DISTANCE + "%";
       gsapWithCSS.to(this.el, {
-        yPercent: DISTANCE / 2,
+        yPercent: this.DISTANCE / 2,
         ease: "none",
         scrollTrigger: {
           start: "top bottom",
