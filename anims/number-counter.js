@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 export default class NumberCounter{
   constructor(el) {
     this.el = el

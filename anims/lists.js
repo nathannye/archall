@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 export default class Lists{
   constructor() {
     this.elements = document.querySelectorAll(".project-list-item");

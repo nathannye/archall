@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 export default class Parallax{
   constructor(el) {
     this.el = el

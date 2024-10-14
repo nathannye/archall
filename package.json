@@ -3,7 +3,9 @@
   "version": "1.0.2",
   "type": "module",
   "dependencies": {
-    "esbuild": "^0.24.0"
+    "esbuild": "^0.24.0",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.14"
   },
   "scripts": {
     "dev": "NODE_ENV=dev node esbuild.config.js",

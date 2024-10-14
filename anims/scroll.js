@@ -1,3 +1,5 @@
+import Lenis from "lenis";
+
 export default class Scroll{
   construtor() {
     this.init()
