@@ -19,7 +19,7 @@ export default class MixBlocks{
       if (indexToPlace > this.projects.length) return
       const projectBefore = this.projects[indexToPlace - 1];
   
-      this.rojectsWrapper.insertBefore(block, projectBefore);
+      this.projectsWrapper.insertBefore(block, projectBefore);
     });
   }
 

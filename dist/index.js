@@ -7660,7 +7660,7 @@
         const indexToPlace = this.gridPatternIndex(i + 1);
         if (indexToPlace > this.projects.length) return;
         const projectBefore = this.projects[indexToPlace - 1];
-        this.rojectsWrapper.insertBefore(block, projectBefore);
+        this.projectsWrapper.insertBefore(block, projectBefore);
       });
     }
   };
