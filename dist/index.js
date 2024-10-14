@@ -6710,13 +6710,13 @@
     init() {
       const img = this.el.querySelector("img");
       img.style.scale = 100 + this.DISTANCE + "%";
-      gsapWithCSS.to(this.el, {
+      gsapWithCSS.to(img, {
         yPercent: this.DISTANCE / 2,
         ease: "none",
         scrollTrigger: {
           start: "top bottom",
           end: "bottom top",
-          trigger: el,
+          trigger: this.el,
           scrub: true
         }
       });
