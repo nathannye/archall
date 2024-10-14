@@ -24,6 +24,7 @@ export default class MixBlocks{
     if(!this.projectsWrapper) return
     this.projects = this.projectsWrapper.children;
     this.init()
+    console.log('mixblocks created')
   }
 
   gridPatternIndex(num) {
