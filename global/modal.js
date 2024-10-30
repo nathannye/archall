@@ -17,7 +17,7 @@ export default class ModalForm{
     });
   
     tl.to(
-      this.modal,
+      this.el,
       {
         display: "flex",
         duration: 0,
