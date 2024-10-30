@@ -5,14 +5,18 @@ import Nav from "./nav";
 
 export default class Global{
   constructor() {
+
+
+    console.log('globallll created')
+
+    this.init()
+  }
+
+  init() {
     new MixBlocks()
     new Nav()
     new Animations()
 
-    console.log('global created')
-  }
-
-  init() {
     const modal = document.querySelector(".modal-wrapper");
     console.log('found modal:', modal)
     if (modal) {

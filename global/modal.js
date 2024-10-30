@@ -4,7 +4,7 @@ export default class ModalForm{
     this.isOpen = false
     this.triggers = document.querySelectorAll('[data-modal="trigger"]');
     this.modalContent = this.el.querySelector(".modal-form");
-
+    
     this.init()
   }
 
