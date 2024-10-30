@@ -14,6 +14,7 @@ export default class Global{
 
   init() {
     const modal = document.querySelector(".modal-wrapper");
+    console.log('found modal:', modal)
     if (modal) {
       new ModalForm(modal);
     }
