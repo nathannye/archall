@@ -1,9 +1,9 @@
 import gsap from "gsap";
-import About from "./about";
-import Global from "./global";
-import Home from "./home";
-import Project from "./project";
-import Sector from "./sector";
+import About from "./src/about";
+import Global from "./src/global";
+import Home from "./src/home";
+import Project from "./src/project";
+import Sector from "./src/sector";
 import { ScrollTrigger } from "gsap/all";
 
 import './styles/about.css'
