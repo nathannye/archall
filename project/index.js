@@ -18,7 +18,6 @@ class HotspotPoint {
     this.containerWidth = containerWidth;
     this.marker = this.point.querySelector('[data-point="marker"]');
     this.img = this.container.querySelector('[data-point="image"] img');
-
     this.mobilePopup = [
       ...this.container.querySelectorAll('[data-point="mobile-popup"]'),
     ][index];
@@ -37,12 +36,16 @@ class HotspotPoint {
   }
 
   listeners() {
+
+    this.img.onload = () => {
+      this.setPosition();
+      console.log('fired, image laoded')
+    };
+
+    console.log('image complet:,'this.img.complete);
+
     if (this.img.complete) {
       this.setPosition();
-    } else {
-      this.img.onload = () => {
-        this.setPosition();
-      };
     }
   }
 
