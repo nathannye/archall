@@ -36,21 +36,21 @@ class HotspotPoint {
   }
 
   listeners() {
-    console.log(this.img.src)
+    if (this.img.complete) {
+      this.setPosition();
+    }
+
     this.img.addEventListener("load", () => { 
       setTimeout(() => {
-        
         this.setPosition();
-      }, 400)
+      }, 800)
       console.log('fired, image laoded')
     })
 
 
     console.log('image complet:',this.img.complete);
 
-    if (this.img.complete) {
-      this.setPosition();
-    }
+
   }
 
 
