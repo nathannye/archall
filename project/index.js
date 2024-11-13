@@ -1,6 +1,5 @@
-
+import EmblaCarousel from 'embla-carousel'
 import HotspotSection from "./hotspot-section";
-
 
 export default class Project {
   constructor() {

@@ -21,7 +21,6 @@ import './styles/lenis.css'
 export default class App{
   constructor() {
     this.currentPage = window.location.pathname;
-    console.log('current page', this.currentPage)
     
     this.register()
     this.init()
@@ -35,22 +34,22 @@ export default class App{
     new Global()
     if (this.currentPage === '/') {
       new Home()
-      console.log('created home')
+
     }
 
     if(this.currentPage === '/about') {
       new About()
-      console.log('created about')
+
     }
 
     if (this.currentPage.startsWith('/projects/')) {
       new Project()
-      console.log('created project')
+
     }
 
     if (this.currentPage.startsWith('/sector/')) {
       new Sector()
-      console.log('created sector')
+
     }
 
 

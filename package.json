@@ -3,9 +3,10 @@
   "version": "1.0.2",
   "type": "module",
   "dependencies": {
+    "embla-carousel": "^8.3.1",
     "esbuild": "^0.24.0",
     "gsap": "^3.12.5",
-    "lenis": "^1.1.14"
+    "lenis": "^1.1.16"
   },
   "scripts": {
     "dev": "NODE_ENV=dev node esbuild.config.js",
