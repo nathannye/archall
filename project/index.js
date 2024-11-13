@@ -42,7 +42,7 @@ class HotspotPoint {
       console.log('fired, image laoded')
     };
 
-    console.log('image complet:,'this.img.complete);
+    console.log('image complet:',this.img.complete);
 
     if (this.img.complete) {
       this.setPosition();
