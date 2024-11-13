@@ -36,11 +36,12 @@ class HotspotPoint {
   }
 
   listeners() {
-
-    this.img.onload = () => {
+    console.log(this.img.src)
+    this.img.addEventListener("load", () => { 
       this.setPosition();
       console.log('fired, image laoded')
-    };
+    })
+
 
     console.log('image complet:',this.img.complete);
 
