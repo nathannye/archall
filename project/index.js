@@ -72,11 +72,15 @@ class HotspotPoint {
 
 
 
+
+
     const s = `translate(${x * this.containerWidth}px, ${
       y * this.containerHeight
     }px)`;
 
     this.point.style.transform = s;
+
+    console.log('transform:',this.point.style.transform)
 
     this.isPopupLeft = this.isMobile ? false : this.posX >= 0.8;
 
