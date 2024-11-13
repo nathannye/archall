@@ -16,8 +16,6 @@ import './styles/styles.css'
 import './styles/work.css'
 import './styles/lenis.css'
 
-
-
 export default class App{
   constructor() {
     this.currentPage = window.location.pathname;
@@ -34,26 +32,19 @@ export default class App{
     new Global()
     if (this.currentPage === '/') {
       new Home()
-
     }
 
     if(this.currentPage === '/about') {
       new About()
-
     }
 
     if (this.currentPage.startsWith('/projects/')) {
       new Project()
-
     }
 
     if (this.currentPage.startsWith('/sector/')) {
       new Sector()
-
     }
-
-
-
   }
 }
 

@@ -5,7 +5,6 @@ import Nav from "./nav";
 
 export default class Global{
   constructor() {
-
     this.init()
   }
 
