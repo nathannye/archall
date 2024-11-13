@@ -19,8 +19,6 @@ export default class Nav {
     this.navTl = gsap.timeline({ paused: true });
     this.init();
     this.listeners();
-
-    console.log('created nav')
   }
 
   unlockScrollWhenCLickItem() {

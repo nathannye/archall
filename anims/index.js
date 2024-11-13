@@ -9,7 +9,6 @@ export default class Animations{
   constructor() {
     this.parallaxElements = document.querySelectorAll('[data-animation="parallax"]');
     this.init()
-    console.log('animations created')
   }
 
   init() {

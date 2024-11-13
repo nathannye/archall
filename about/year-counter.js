@@ -8,7 +8,6 @@ export default class YearCounter(){
     const year = new Date().getFullYear();
 
     elements.forEach((el) => {
-      // console.log('creating counter for', el);
       let endValue;
       
       if(el.dataset?.counter === 'year'){
