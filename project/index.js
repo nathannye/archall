@@ -80,7 +80,13 @@ class HotspotPoint {
 
     this.point.style.transform = s;
 
-    console.log('transform:',this.point.style.transform)
+    console.log({
+      transform: this.point.style.transform,
+      x, 
+      y,
+      xRaw: this.posX,
+      yRaw: this.posY,
+    })
 
     this.isPopupLeft = this.isMobile ? false : this.posX >= 0.8;
 
