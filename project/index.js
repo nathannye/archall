@@ -38,7 +38,10 @@ class HotspotPoint {
   listeners() {
     console.log(this.img.src)
     this.img.addEventListener("load", () => { 
-      this.setPosition();
+      setTimeout(() => {
+        
+        this.setPosition();
+      }, 400)
       console.log('fired, image laoded')
     })
 
