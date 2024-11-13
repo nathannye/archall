@@ -63,23 +63,19 @@ export default class HotspotPoint {
     const x = Math.min(this.posX, 0.9);
     const y = Math.min(this.posY, 0.9);
 
-
-
-
-
     const s = `translate(${x * this.containerWidth}px, ${
       y * this.containerHeight
     }px)`;
 
     this.point.style.transform = s;
 
-    console.log({
-      transform: this.point.style.transform,
-      x, 
-      y,
-      xRaw: this.posX,
-      yRaw: this.posY,
-    })
+    // console.log({
+    //   transform: this.point.style.transform,
+    //   x, 
+    //   y,
+    //   xRaw: this.posX,
+    //   yRaw: this.posY,
+    // })
 
     this.isPopupLeft = this.isMobile ? false : this.posX >= 0.8;
 
