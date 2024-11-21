@@ -134,6 +134,8 @@ export default class Nav {
 
     gsap.set(this.panel, {
       clipPath: `inset(0% 100% 0% 0%)`,
+      pointerEvents: "none",
+      opacity: 0,
     });
 
     this.navTl.to(
@@ -141,6 +143,7 @@ export default class Nav {
       {
         clipPath: `inset(0% 0% 0% 0%)`,
         pointerEvents: "auto",
+        opactity: 1,
         duration: 0.8,
         ease: "power4.out",
       },
