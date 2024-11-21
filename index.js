@@ -6,15 +6,15 @@ import Project from "./src/project";
 import Sector from "./src/sector";
 import { ScrollTrigger } from "gsap/all";
 
-import './styles/about.css'
-import './styles/global.css'
-import  './styles/home.css'
-import  './styles/index.css'
-import  './styles/project.css'
-import './styles/sector.css'
-import './styles/styles.css'
-import './styles/work.css'
-import './styles/lenis.css'
+import './src/styles/about.css'
+import './src/styles/global.css'
+import  './src/styles/home.css'
+import  './src/styles/index.css'
+import  './src/styles/project.css'
+import './src/styles/sector.css'
+import './src/styles/styles.css'
+import './src/styles/work.css'
+import './src/styles/lenis.css'
 
 export default class App{
   constructor() {
