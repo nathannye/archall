@@ -138,6 +138,8 @@ export default class Nav {
       opacity: 0,
     });
 
+    console.log('nav v1.01')
+
     this.navTl.to(
       this.panel,
       {
