@@ -38,11 +38,12 @@ export default class HotspotSection {
       this.points.forEach((point) => point.resize());
     });
 
-    
+
     ScrollTrigger.create({
       start: 'top bottom', 
       trigger: this.container,
       onEnter: () => {
+        console.log('point trigger')
         this.points.forEach((point) => point.resize());
       },
       once: true,
