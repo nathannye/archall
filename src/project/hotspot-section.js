@@ -1,3 +1,4 @@
+import { ScrollTrigger } from "gsap/all";
 import HotspotPoint from "./hotspot-point";
 
 export default class HotspotSection {
@@ -36,6 +37,16 @@ export default class HotspotSection {
       this.containerWidth = this.image.getBoundingClientRect().width;
       this.points.forEach((point) => point.resize());
     });
+
+    
+    ScrollTrigger.create({
+      start: 'top bottom', 
+      trigger: this.container,
+      onEnter: () => {
+        this.points.forEach((point) => point.resize());
+      },
+      once: true,
+    })
 
     if (this.image.complete) {
       this.containerHeight = this.image.getBoundingClientRect().height;
