@@ -7,6 +7,7 @@ import gsap from "gsap";
 
 export default class Global {
 	constructor() {
+		this.activeDropdown = null;
 		this.dropdowns = gsap.utils.toArray('[data-dropdown="container"]');
 		this.init();
 	}
@@ -17,9 +18,9 @@ export default class Global {
 		new Animations();
 
 		if (this.dropdowns.length > 0) {
-			for (const dropdown of this.dropdowns) {
-				new NavAccordion(dropdown);
-			}
+			this.dropdowns.forEach((dropdown, i) => {
+				new NavAccordion(dropdown, i);
+			});
 		}
 
 		const modal = document.querySelector(".modal-wrapper");

@@ -1,8 +1,10 @@
 import gsap from "gsap";
+import { emit, listen } from "../utils/events";
 
 export default class NavAccordion {
-	constructor(element) {
+	constructor(element, index) {
 		this.element = element;
+		this.index = index;
 		this.carat = element.querySelector('[data-dropdown="carat"]');
 		this.trigger = element.querySelector('[data-dropdown="trigger"]');
 		this.optionsWrapper = element.querySelector('[data-nav="options"]');
@@ -31,15 +33,33 @@ export default class NavAccordion {
 		window.lenis.start();
 	}
 
+	fireEvent() {
+		emit("nav-accordion-open", {
+			index: this.index,
+			isOpen: this.dropdownOpen,
+		});
+	}
+
 	init() {
 		// this.element.addEventListener("click", this.handleClick.bind(this));
 		this.listeners();
 		this.createAnimation();
 	}
 
+	close() {
+		this.dropdownOpen = false;
+		this.optionsTl.reverse();
+		this.fireEvent();
+	}
+
+	open() {
+		this.dropdownOpen = true;
+		this.optionsTl.play();
+		this.fireEvent();
+	}
+
 	toggleDropdown() {
-		this.dropdownOpen ? this.optionsTl.reverse() : this.optionsTl.play();
-		this.dropdownOpen = !this.dropdownOpen;
+		this.dropdownOpen ? this.close() : this.open();
 	}
 
 	handleSectorIn(index) {
@@ -65,6 +85,12 @@ export default class NavAccordion {
 				el.addEventListener("mouseout", this.handleSectorOut.bind(this));
 			});
 		}
+
+		listen("nav-accordion-open", (e) => {
+			if (e.detail.index !== this.index) {
+				this.close();
+			}
+		});
 	}
 
 	createAnimation() {
