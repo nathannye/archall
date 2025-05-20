@@ -60,9 +60,8 @@ export default class Nav {
 	toggleNav() {
 		const isOpen = this.navOpen;
 
-		if (isOpen) {
+		if (isOpen && this.dropdowns.length > 0) {
 			for (const dropdown of this.dropdowns) {
-				
 				dropdown.close();
 			}
 		}
