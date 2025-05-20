@@ -5,7 +5,6 @@ export default class Nav {
 		this.navOpen = false;
 		this.activeImage = null;
 
-  
 		this.menuButton = document.querySelector('[data-nav="trigger"]');
 		// this.carat = document.querySelector('[data-sectors="carat"]');
 		// this.trigger = document.querySelector('[data-nav="dropdown"]');
@@ -48,8 +47,7 @@ export default class Nav {
 	init() {
 		const mm = gsap.matchMedia();
 		// desktop
-		mm.add("(min-width: 768px)", () => {
-	
+		// mm.add("(min-width: 768px)", () => {
 		gsap.set(this.panel, {
 			clipPath: `inset(0% 100% 0% 0%)`,
 			pointerEvents: "none",
@@ -69,6 +67,7 @@ export default class Nav {
 			},
 			0,
 		);
+		// });
 	}
 
 	toggleNav() {
