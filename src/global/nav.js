@@ -62,6 +62,7 @@ export default class Nav {
 
 		if (isOpen) {
 			for (const dropdown of this.dropdowns) {
+				
 				dropdown.close();
 			}
 		}

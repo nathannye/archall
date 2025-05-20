@@ -13,15 +13,15 @@ export default class Global {
 	}
 
 	init() {
-		new MixBlocks();
-		new Nav(this.dropdowns);
-		new Animations();
-
 		if (this.dropdowns.length > 0) {
 			this.dropdowns.forEach((dropdown, i) => {
 				new NavAccordion(dropdown, i);
 			});
 		}
+
+		new MixBlocks();
+		new Nav(this.dropdowns);
+		new Animations();
 
 		const modal = document.querySelector(".modal-wrapper");
 		if (modal) {
