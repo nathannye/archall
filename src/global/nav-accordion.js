@@ -9,6 +9,7 @@ export default class NavAccordion {
 		this.options = element.querySelectorAll('[data-nav="option"]');
 		this.wrapAll = element.querySelector('[data-nav="options-wrap"]');
 		this.navLinks = element.querySelectorAll(".nav_link");
+		this.optionsTl = gsap.timeline({ paused: true });
 		this.wrapAll.style.height = 0;
 		this.dropdownOpen = false;
 
