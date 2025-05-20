@@ -29,13 +29,28 @@ export default class NavAccordion {
 	}
 
 	init() {
-		this.element.addEventListener("click", this.handleClick.bind(this));
+		// this.element.addEventListener("click", this.handleClick.bind(this));
+		this.listeners();
 		this.createAnimation();
 	}
 
 	toggleDropdown() {
 		this.dropdownOpen ? this.optionsTl.reverse() : this.optionsTl.play();
 		this.dropdownOpen = !this.dropdownOpen;
+	}
+
+	handleSectorIn(index) {
+		if (window.innerWidth < 768 || navigator.maxTouchPoints > 0) return; // dont fire this on mobile
+		const images = document.querySelectorAll('[data-nav="images"] img');
+		if (!images[index] && !navOpen) return;
+		images[index].classList.add("active-image");
+	}
+
+	handleSectorOut() {
+		const images = document.querySelectorAll('[data-nav="images"] img');
+		images.forEach((el, i) => {
+			el.classList.remove("active-image");
+		});
 	}
 
 	listeners() {
