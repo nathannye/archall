@@ -47,10 +47,12 @@ export default class NavAccordion {
 
 	close() {
 		this.dropdownOpen = false;
+		this.wrapAll.style.pointerEvents = "none";
 		this.optionsTl.reverse();
 	}
 
 	open() {
+		this.wrapAll.style.pointerEvents = "auto";
 		this.dropdownOpen = true;
 		this.optionsTl.play();
 		this.fireEvent();
