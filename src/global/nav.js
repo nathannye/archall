@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { emit } from "../utils/events";
 
 export default class Nav {
 	constructor(dropdowns) {
@@ -59,6 +60,12 @@ export default class Nav {
 
 	toggleNav() {
 		const isOpen = this.navOpen;
+
+		emit("nav-open", {
+			isOpen,
+		});
+
+		this.panel.setAttribute("data-open", isOpen);
 
 		if (isOpen && this.dropdowns.length > 0) {
 			for (const dropdown of this.dropdowns) {

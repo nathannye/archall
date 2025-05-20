@@ -14,10 +14,18 @@ export default class NavAccordion {
 		this.optionsTl = gsap.timeline({ paused: true });
 		this.wrapAll.style.height = 0;
 		this.dropdownOpen = false;
+		this.navOpen = false;
 
 		this.isSectorDropdown = this.element?.dataset?.dropdowns === "sectors";
 
 		this.init();
+	}
+
+	isNavOpen() {
+		return (
+			document.querySelector('[data-nav="panel"]').getAttribute("data-open") ===
+			"true"
+		);
 	}
 
 	unlockScrollWhenCLickItem() {
@@ -53,9 +61,17 @@ export default class NavAccordion {
 	}
 
 	handleSectorIn(index) {
+		function isNavOpen() {
+			return (
+				document
+					.querySelector('[data-nav="panel"]')
+					.getAttribute("data-open") === "true"
+			);
+		}
+
 		if (window.innerWidth < 768 || navigator.maxTouchPoints > 0) return; // dont fire this on mobile
 		const images = document.querySelectorAll('[data-nav="images"] img');
-		if (!images[index] && !navOpen) return;
+		if (!images[index] && !isNavOpen()) return;
 		images[index].classList.add("active-image");
 	}
 
