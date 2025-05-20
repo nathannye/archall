@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 export default class NavAccordion {
 	constructor(element) {
 		this.element = element;
