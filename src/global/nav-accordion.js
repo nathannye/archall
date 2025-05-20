@@ -10,6 +10,8 @@ export default class NavAccordion {
 		this.wrapAll.style.height = 0;
 		this.dropdownOpen = false;
 
+		this.isSectorDropdown = this.element?.dataset?.dropdowns === "sectors";
+
 		console.log({
 			navLinks: this.navLinks,
 			trigger: this.trigger,
@@ -38,6 +40,13 @@ export default class NavAccordion {
 
 	listeners() {
 		this.trigger.addEventListener("click", this.toggleDropdown.bind(this));
+
+		if (this.isSectorDropdown) {
+			this.options.forEach((el, i) => {
+				el.addEventListener("mouseover", () => this.handleSectorIn(i));
+				el.addEventListener("mouseout", this.handleSectorOut.bind(this));
+			});
+		}
 	}
 
 	createAnimation() {
