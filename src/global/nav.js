@@ -61,10 +61,6 @@ export default class Nav {
 	toggleNav() {
 		const isOpen = this.navOpen;
 
-		emit("nav-open", {
-			isOpen,
-		});
-
 		if (isOpen && this.dropdowns.length > 0) {
 			for (const dropdown of this.dropdowns) {
 				dropdown.close();
@@ -77,6 +73,16 @@ export default class Nav {
 		this.navOpen = !this.navOpen;
 
 		this.panel.setAttribute("data-open", this.navOpen);
+    
+		if (this.navOpen) {
+			emit("nav-open", {
+				isOpen,
+			});
+		} else {
+			emit("nav-close", {
+				isOpen,
+			});
+		}
 	}
 
 	listeners() {

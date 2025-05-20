@@ -97,6 +97,10 @@ export default class NavAccordion {
 				this.close();
 			}
 		});
+
+		listen("nav-close", (e) => {
+			this.close();
+		});
 	}
 
 	createAnimation() {
