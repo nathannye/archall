@@ -33,7 +33,7 @@ export default class Nav {
 	handleSectorIn(index) {
 		if (window.innerWidth < 768 || navigator.maxTouchPoints > 0) return; // dont fire this on mobile
 		const images = document.querySelectorAll('[data-nav="images"] img');
-		if (!images[index] && !navOpen) return;
+		if (!images[index] && !this.navOpen) return;
 		images[index].classList.add("active-image");
 	}
 
