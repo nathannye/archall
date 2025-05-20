@@ -58,16 +58,18 @@ export default class Nav {
 	}
 
 	toggleNav() {
-		this.navOpen ? this.navTl.reverse() : this.navTl.play();
-		this.navOpen ? window.lenis.start() : window.lenis.stop();
-		this.menuButton.textContent = this.navOpen ? "Menu" : "Close";
-		this.navOpen = !this.navOpen;
+		const isOpen = this.navOpen;
 
-		if (!this.navOpen) {
-			this.dropdowns.forEach((dropdown) => {
+		if (isOpen) {
+			for (const dropdown of this.dropdowns) {
 				dropdown.close();
-			});
+			}
 		}
+
+		isOpen ? this.navTl.reverse() : this.navTl.play();
+		isOpen ? window.lenis.start() : window.lenis.stop();
+		this.menuButton.textContent = isOpen ? "Menu" : "Close";
+		this.navOpen = !this.navOpen;
 	}
 
 	listeners() {

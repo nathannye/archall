@@ -17,15 +17,6 @@ export default class NavAccordion {
 
 		this.isSectorDropdown = this.element?.dataset?.dropdowns === "sectors";
 
-		console.log({
-			navLinks: this.navLinks,
-			trigger: this.trigger,
-			optionsWrapper: this.optionsWrapper,
-			options: this.options,
-			wrapAll: this.wrapAll,
-			carat: this.carat,
-		});
-
 		this.init();
 	}
 
