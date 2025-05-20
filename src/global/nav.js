@@ -65,8 +65,6 @@ export default class Nav {
 			isOpen,
 		});
 
-		this.panel.setAttribute("data-open", isOpen);
-
 		if (isOpen && this.dropdowns.length > 0) {
 			for (const dropdown of this.dropdowns) {
 				dropdown.close();
@@ -77,6 +75,8 @@ export default class Nav {
 		isOpen ? window.lenis.start() : window.lenis.stop();
 		this.menuButton.textContent = isOpen ? "Menu" : "Close";
 		this.navOpen = !this.navOpen;
+
+		this.panel.setAttribute("data-open", this.navOpen);
 	}
 
 	listeners() {
