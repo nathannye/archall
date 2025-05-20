@@ -49,7 +49,6 @@ export default class NavAccordion {
 	close() {
 		this.dropdownOpen = false;
 		this.optionsTl.reverse();
-		this.fireEvent();
 	}
 
 	open() {
