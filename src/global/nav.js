@@ -82,10 +82,10 @@ export default class Nav {
 		this.navLinks.forEach((el, i) => {
 			el.addEventListener("click", this.unlockScrollWhenCLickItem.bind(this));
 		});
-		// this.trigger.addEventListener("click", this.toggleDropdown.bind(this));
-		this.options.forEach((el, i) => {
-			el.addEventListener("mouseover", () => this.handleSectorIn(i));
-			el.addEventListener("mouseout", this.handleSectorOut.bind(this));
-		});
+		// // this.trigger.addEventListener("click", this.toggleDropdown.bind(this));
+		// this.options.forEach((el, i) => {
+		// 	el.addEventListener("mouseover", () => this.handleSectorIn(i));
+		// 	el.addEventListener("mouseout", this.handleSectorOut.bind(this));
+		// });
 	}
 }
