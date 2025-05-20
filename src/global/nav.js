@@ -1,21 +1,15 @@
 import gsap from "gsap";
 
 export default class Nav {
-	constructor() {
+	constructor(dropdowns) {
+		this.dropdowns = dropdowns;
 		this.navOpen = false;
 		this.activeImage = null;
-
 		this.menuButton = document.querySelector('[data-nav="trigger"]');
-		// this.carat = document.querySelector('[data-sectors="carat"]');
-		// this.trigger = document.querySelector('[data-nav="dropdown"]');
 		this.panel = document.querySelector('[data-nav="panel"]');
-		// this.optionsWrapper = document.querySelector('[data-nav="options"]');
-		// this.options = document.querySelectorAll('[data-nav="option"]');
 		this.navLinks = document.querySelectorAll(".nav_link");
 		this.navContainer = document.querySelector('[data-nav="container"]');
-		// this.optionsTl = gsap.timeline({ paused: true });
-		// this.wrapAll = document.querySelector('[data-nav="options-wrap"]');
-		// this.wrapAll.style.height = 0;
+
 		this.navTl = gsap.timeline({ paused: true });
 		this.init();
 		this.listeners();
@@ -24,11 +18,6 @@ export default class Nav {
 	unlockScrollWhenCLickItem() {
 		window.lenis.start();
 	}
-
-	// toggleDropdown() {
-	// 	this.dropdownOpen ? this.optionsTl.reverse() : this.optionsTl.play();
-	// 	this.dropdownOpen = !this.dropdownOpen;
-	// }
 
 	handleSectorIn(index) {
 		if (window.innerWidth < 768 || navigator.maxTouchPoints > 0) return; // dont fire this on mobile
@@ -54,8 +43,6 @@ export default class Nav {
 			opacity: 0,
 		});
 
-		console.log("nav v1.02");
-
 		this.navTl.to(
 			this.panel,
 			{
@@ -75,6 +62,12 @@ export default class Nav {
 		this.navOpen ? window.lenis.start() : window.lenis.stop();
 		this.menuButton.textContent = this.navOpen ? "Menu" : "Close";
 		this.navOpen = !this.navOpen;
+
+		if (!this.navOpen) {
+			this.dropdowns.forEach((dropdown) => {
+				dropdown.close();
+			});
+		}
 	}
 
 	listeners() {
@@ -82,10 +75,5 @@ export default class Nav {
 		this.navLinks.forEach((el, i) => {
 			el.addEventListener("click", this.unlockScrollWhenCLickItem.bind(this));
 		});
-		// // this.trigger.addEventListener("click", this.toggleDropdown.bind(this));
-		// this.options.forEach((el, i) => {
-		// 	el.addEventListener("mouseover", () => this.handleSectorIn(i));
-		// 	el.addEventListener("mouseout", this.handleSectorOut.bind(this));
-		// });
 	}
 }

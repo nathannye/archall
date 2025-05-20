@@ -14,7 +14,7 @@ export default class Global {
 
 	init() {
 		new MixBlocks();
-		new Nav();
+		new Nav(this.dropdowns);
 		new Animations();
 
 		if (this.dropdowns.length > 0) {
