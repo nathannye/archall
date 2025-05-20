@@ -20,7 +20,7 @@ export default class Global {
 		}
 
 		new MixBlocks();
-		new Nav(this.dropdowns);
+		new Nav();
 		new Animations();
 
 		const modal = document.querySelector(".modal-wrapper");

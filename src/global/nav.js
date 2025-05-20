@@ -2,8 +2,7 @@ import gsap from "gsap";
 import { emit } from "../utils/events";
 
 export default class Nav {
-	constructor(dropdowns) {
-		this.dropdowns = dropdowns;
+	constructor() {
 		this.navOpen = false;
 		this.activeImage = null;
 		this.menuButton = document.querySelector('[data-nav="trigger"]');
@@ -61,19 +60,13 @@ export default class Nav {
 	toggleNav() {
 		const isOpen = this.navOpen;
 
-		if (isOpen && this.dropdowns.length > 0) {
-			for (const dropdown of this.dropdowns) {
-				dropdown.close();
-			}
-		}
-
 		isOpen ? this.navTl.reverse() : this.navTl.play();
 		isOpen ? window.lenis.start() : window.lenis.stop();
 		this.menuButton.textContent = isOpen ? "Menu" : "Close";
 		this.navOpen = !this.navOpen;
 
 		this.panel.setAttribute("data-open", this.navOpen);
-    
+
 		if (this.navOpen) {
 			emit("nav-open", {
 				isOpen,
